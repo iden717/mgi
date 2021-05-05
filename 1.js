@@ -27,3 +27,22 @@ const stok_product = [
     qty: 18,
   },
 ];
+
+let sstok = [];
+stok_product.map((value, index) => {
+  var id = value.id_product;
+  sstok[id] = value;
+});
+stok_product.forEach(function (obj, i) {
+  var id = obj.id_product;
+  sstok[id] = stok_product[i];
+}, Object.create(null));
+
+const hasil = product.map((value, index) => {
+  const row = product.findIndex((rows) => rows.id_product === index + 1);
+
+  //   sstok[index] = { id: value.id_product , qty: };
+  return { nama_product: product[row].nama_product, total_stok: "" };
+});
+
+console.log(hasil);
